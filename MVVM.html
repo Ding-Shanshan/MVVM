@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app" class="app">
+        <h3>操作示例</h3>
+        <input type="text" v-model="message.a">
+        <div class="message">{{message.a}}</div>
+    </div>
+</body>
+<script src="./watcher.js"></script>
+<script src="./observer.js"></script>
+<script src="./compile.js"></script>
+<script src="MVVM.js"></script>
+<script>
+    let vm=new MVVM({
+        el:'#app',
+        data:{
+            message:{
+                a:'hello jxd'
+            }
+        }
+    })
+</script>
+<style>
+    .app{
+        position: fixed;
+        width:500px;
+        height:100px;
+        left:50%;
+        margin-left:-200px;
+        text-align: center;
+        font-size: 32px;
+        color: rgb(55, 55, 55);
+    }
+    input{
+        width:400px;
+        height:50px;
+        padding:0 15px; 
+        border-radius: 5px;
+        border:1px solid rgb(220, 220, 220);
+        font-size: 26px;
+        color:darkseagreen;
+        outline: none;
+        transition: all 0.5s;
+    }
+    input:hover{
+        border: 1px solid rgb(171, 171, 171);
+        outline: none;
+    }
+    .message{
+        color:cadetblue;
+        margin-top:35px;
+    }
+</style>
+</html>
